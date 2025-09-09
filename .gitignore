@@ -1,51 +1,24 @@
-# Защита от зависимостей (это можно переустановить командой 'npm install')
-node_modules/
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Защита от артефактов сборки (их создает Vite при сборке проекта)
-dist/
-dist-ssr/
-*.tar.gz
-*.zip
+node_modules
+dist
+dist-ssr
+*.local
 
-# Защита от системных файлов
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Защита от файлов окружения (там могут быть пароли)
-.env
-.env.*
-!.env.example
-
-# Защита от логов
-logs
-*.log
-
-# Защита от runtime данных
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# Защита от редактора (если используешь VSCode, его настройки тоже не нужно хранить в гите)
-.vscode/
-
-# Защита от КРИТИЧЕСКИ ВАЖНОГО: твоих личных файлов, картинок, скриншотов!
-*.jpg
-*.jpeg
-*.png
-*.gif
-*.bmp
-*.ico
-*.svg
-*.psd
-/secret_notes.txt
-/passwords.txt
-/my_screenshots/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

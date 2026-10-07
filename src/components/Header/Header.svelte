@@ -34,7 +34,7 @@
       {/each}
     </nav>
 
-    <div class="spacer" />
+    <div class="spacer"></div>
 
     <div class="right">
       <div class="avatar" title={user?.name || 'Гость'}>

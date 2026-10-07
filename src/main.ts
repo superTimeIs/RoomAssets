@@ -1,9 +1,21 @@
-import { mount } from 'svelte'
-import './app.css'
-import App from './App.svelte'
+import { mount } from 'svelte';
+import App from './App.svelte';
+import './app.css';
 
-const app = mount(App, {
-  target: document.getElementById('app')!,
-})
+async function enableMocking() {
+  if (import.meta.env.DEV) {
+    const { worker } = await import('./mocks/browser');
+    await worker.start({
+      onUnhandledRequest: 'bypass',
+      serviceWorker: {
+        url: `${import.meta.env.BASE_URL}mockServiceWorker.js`,
+      },
+    });
+  }
+}
 
-export default app
+const app = await enableMocking().then(() => {
+  return mount(App, { target: document.getElementById('app')! });
+});
+
+export default app;
